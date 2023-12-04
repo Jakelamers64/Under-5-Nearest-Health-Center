@@ -1,5 +1,5 @@
 ---
-title: Which Cheifdom Has the Furtherest Average Distance to a Health Facility For Under 5 Children?
+title: "Optimizing Access to Health Facilities for Under 5 Children: Assessing the Chiefdom with the Longest Average Distance"
 author: Jacob Lamers
 output: pdf_document
 bibliography: bibliography.bib
@@ -8,34 +8,47 @@ documentclass: report
 ---
 
 <!--
-pandoc -o Personal_Statement.pdf Personal_Statement.md
+pandoc --citeproc -o paper.pdf paper.md
+-->
+
+<!--
+TODO
+- grammarly intro
+- edit/grammarly methods
+- edit results
+- edit conculsion
+- fix pop distribution to show points by size
+- Read and Cite article
+
+DONE
+- Find source intro
 -->
 
 ## Introduction:
 
-The intersection of geospatial data and public health research has become increasingly pivotal in recent years. As researchers and policymakers seek to address complex healthcare challenges, understanding the geographical distribution of health facilities and demographic patterns emerges as a cornerstone for effective planning and resource allocation. Geospatial analysis allows for a nuanced exploration of spatial relationships, offering insights that extend beyond traditional demographic studies. This analysis, often conducted through the lens of geographic information systems (GIS), has the potential to inform evidence-based decision-making and enhance the overall efficiency of healthcare systems [@doi:10.1080/17538941003759255].
+The intersection of geospatial data and public health research has become increasingly pivotal in recent years. As researchers and policymakers seek to address complex healthcare challenges, understanding the geographical distribution of health facilities and demographic patterns emerges as a cornerstone for effective planning and resource allocation. Geospatial analysis allows for a nuanced exploration of spatial relationships, offering insights that extend beyond traditional demographic studies. This analysis, often conducted through the lens of geographic information systems (GIS), has the potential to inform evidence-based decision-making and enhance the overall efficiency of healthcare systems(?). Whether authoratively created or volnteer generated and asserted GIS systems can offer useful insights to assist in systems level descion making [@doi:10.1080/17538941003759255].
 
-The objective of the analysis presented here is to embark on a comprehensive geographic exploration, amalgamating third-level administrative geodata, health center geodata, and population estimates. This multifaceted approach seeks to uncover intricate patterns in health center distribution, population demographics, and accessibility within specific geographical regions. By combining diverse datasets and employing spatial analysis techniques, this study aims to contribute to the growing body of knowledge that leverages geospatial insights for public health enhancement.
+Nations frequently encounter obstacles in the integration of Geographic Information Systems (GIS). African countries, in particular, confront some of these challenges, each with its unique set of issues [@doi:10.1080/02693799108927829]. GRID3 stands out as an organization actively tackling these challenges across multiple African nations. In addition to generating datasets, such as those utilized in this analysis, GRID3 collaborates with the Ministry of Health (MOH) to enhance capabilities and establish sustainable GIS data practices in Sierra Leone [@grid3SierraLeones]. The data for health centers and population distribution used in this study was sourced from GRID3 [@grid3SierraLeone; @grid3GRID3Sierra].
+
+The objective of the analysis presented here is to embark on a comprehensive geographic exploration, amalgamating third-level administrative geodata[@berkeleyBerkeleyGeoData], health center geodata[@grid3SierraLeone], and population estimates[@grid3GRID3Sierra]. This multifaceted approach seeks to uncover intricate patterns in health center distribution, population demographics, and accessibility within specific geographical regions. By combining diverse datasets and employing spatial analysis techniques, this study aims to contribute to the growing body of knowledge that leverages geospatial insights for public health enhancement.
 
 ## Methods
 
-The provided code encompasses a multifaceted data processing pipeline. In the initial phase, the code focuses on data acquisition by downloading and extracting third-level administrative geodata, health center geodata, and population estimate data. Each dataset is stored in dedicated directories for subsequent processing.
+### Data Processing
 
-The code leverages the GeoPandas library to manipulate the third-level administrative geodata and health center geodata. Spatial operations, such as a spatial join, are performed to associate health centers with specific districts. The resulting GeoDataFrame captures the count of health centers within each district, contributing to a comprehensive understanding of their distribution.
+The provided code encompasses a multifaceted data processing pipeline. In the initial phase, the code focuses on data acquisition and processing. Third-level administrative geodata, health center geodata, and georefrenced population estimate data were all obtained for futher analysis. The code leverages the GeoPandas library to manipulate the third-level administrative geodata and health center geodata. Spatial operations were performed to associate health centers with specific districts. The resulting GeoDataFrame captures the count of health centers within each district, contributing to a comprehensive understanding of their distribution.
 
-The population data processing section involves reading data from GeoTIFF files and constructing a GeoPandas DataFrame. This DataFrame encapsulates pixel coordinates as points and their corresponding population values. Age and gender-specific DataFrames are created, eventually merged into a unified GeoDataFrame. The total population is then computed through grouping based on spatial geometry.
+The population data processing section involves reading data from GeoTIFF files. This DataFrame encapsulates pixel coordinates as points and their corresponding population values. Age and gender-specific DataFrames are created, eventually merged into a unified GeoDataFrame containing the under-5 population at each georefrenced point. This population count was computed through grouping based on spatial geometry.
 
-To facilitate further analysis, the GeoDataFrame with population data is exported as a CSV file. The code subsequently conducts a spatial join between the population GeoDataFrame and the district GeoDataFrame, augmenting the dataset with additional information.
+Straight line distance was then calculated to every health center for each pixel containing under-5 population count greater than one. The distance to the nearest health center was then stored along with the name of that health center. Geographic coordinates were utilized to determine the proximity. 
 
-The subsequent section involves calculating distances between population points and the nearest health centers. Geographic coordinates are utilized to determine the proximity, and these results are integrated back into the population GeoDataFrame. The updated GeoDataFrame is persisted as a CSV file. Spatial join operations are extended to the chiefdom level, facilitating the computation of weighted average distances.
+### Visualizaton
 
-Normalization of health center counts and visualization are integral components of the code. The health center count is normalized, and heatmaps depicting health centers per 1000 population and under-5 population are generated. The ensuing analysis includes plotting average distances to the nearest health center per chiefdom.
+The ensuing analysis includes plotting average distances to the nearest health center per chiefdom. A heat map was generated showing the average distance for Under-5's to their nearest health center. A table was also generated displaying the five cheifdoms with the longest average distance. This table also displays relevent values to that calculation.
 
-Spatial analysis and visualization further enhance the insights derived from the data. Points within chiefdom polygons are identified through spatial joins, enabling the calculation of weighted average distances at the chiefdom level. Visualization efforts span from heatmaps showcasing average distances per chiefdom to customized maps illustrating the spatial distribution of points and health centers within specific chiefdoms.
+polygons are identified through spatial joins, enabling the calculation of weighted average distances at the chiefdom level.
 
-As the code progresses, it undertakes tasks related to file reading and data cleaning. CSV files containing population and chiefdom data are read into DataFrames. Geometric information undergoes processing and conversion into appropriate GeoPandas formats.
-
-The final segment delves into plotting and visualization, where various plots are generated to visually represent health center counts per 1000 population, under-5 population, and average distances per chiefdom. The creation of customized maps further enhances the interpretability of the data, providing insights into the spatial relationships between points, health centers, and chiefdoms.
+Spatial analysis and visualization further enhance the insights derived from the data. Points within the chiefdom of Neya were visualized. Customized maps illustrating the spatial distribution of populatons and health centers.
 
 ## Results
 
@@ -72,6 +85,11 @@ These visual and tabular representations collectively contribute to a comprehens
 
 ## Conclusion
 
+<!--
+Limitations
+- straightline distance
+-->
+
 The amalgamation of table insights and geospatial visualizations provides a nuanced understanding of healthcare accessibility, population distribution, and health center placement within the Neya district. These findings carry implications for strategic public health planning and resource allocation. The key takeaways from the analysis are summarized below.
 
 **Healthcare Accessibility:**
@@ -87,5 +105,9 @@ Figure 2 provides a geospatial representation of population distribution within 
 The distribution of health centers, as depicted in Figure 3, showcases concentrated placements in the northwest and southeast of the Neya district. This spatial arrangement suggests relatively better access to healthcare facilities for residents in these regions. The identification of such patterns aids in recognizing areas where healthcare infrastructure may require reinforcement to bridge potential gaps [@nihDevelopmentManagement].
 
 In conclusion, the integration of table insights and geospatial visualizations provides a comprehensive view of the healthcare landscape in the Neya district. The identified disparities in healthcare accessibility and population distribution offer valuable inputs for evidence-based decision-making in public health planning. Addressing these geographic variations is essential to ensuring equitable healthcare services and improving health outcomes for all residents.
+
+## Acknowledgments 
+
+ChatGPT was used extensively in code creation and manuscript writing.
 
 ## Refrences 
