@@ -13,20 +13,23 @@ pandoc --citeproc -o paper.pdf paper.md
 
 <!--
 TODO
-- grammarly intro
-- edit/grammarly methods
+- make figure labels 
 - edit results
 - edit conculsion
 - fix pop distribution to show points by size
-- Read and Cite article
+- Read article
 
 DONE
 - Find source intro
+5/12
+- cited article
+- grammarly intro
+- edit/grammarly methods
 -->
 
 ## Introduction:
 
-The intersection of geospatial data and public health research has become increasingly pivotal in recent years. As researchers and policymakers seek to address complex healthcare challenges, understanding the geographical distribution of health facilities and demographic patterns emerges as a cornerstone for effective planning and resource allocation. Geospatial analysis allows for a nuanced exploration of spatial relationships, offering insights that extend beyond traditional demographic studies. This analysis, often conducted through the lens of geographic information systems (GIS), has the potential to inform evidence-based decision-making and enhance the overall efficiency of healthcare systems(?). Whether authoratively created or volnteer generated and asserted GIS systems can offer useful insights to assist in systems level descion making [@doi:10.1080/17538941003759255].
+The intersection of geospatial data and public health research has become increasingly pivotal in recent years. As researchers and policymakers seek to address complex healthcare challenges, understanding the geographical distribution of health facilities and demographic patterns emerges as a cornerstone for effective planning and resource allocation. Geospatial analysis allows for a nuanced exploration of spatial relationships, offering insights that extend beyond traditional demographic studies. This analysis, often conducted through the lens of geographic information systems (GIS), has the potential to inform evidence-based decision-making and enhance the overall efficiency of healthcare systems[@0c2a1c700ec444a2884c74645fd06387]. Whether authoratively created or volnteer generated and asserted GIS systems can offer useful insights to assist in systems level descion making [@doi:10.1080/17538941003759255].
 
 Nations frequently encounter obstacles in the integration of Geographic Information Systems (GIS). African countries, in particular, confront some of these challenges, each with its unique set of issues [@doi:10.1080/02693799108927829]. GRID3 stands out as an organization actively tackling these challenges across multiple African nations. In addition to generating datasets, such as those utilized in this analysis, GRID3 collaborates with the Ministry of Health (MOH) to enhance capabilities and establish sustainable GIS data practices in Sierra Leone [@grid3SierraLeones]. The data for health centers and population distribution used in this study was sourced from GRID3 [@grid3SierraLeone; @grid3GRID3Sierra].
 
@@ -44,11 +47,9 @@ Straight line distance was then calculated to every health center for each pixel
 
 ### Visualizaton
 
-The ensuing analysis includes plotting average distances to the nearest health center per chiefdom. A heat map was generated showing the average distance for Under-5's to their nearest health center. A table was also generated displaying the five cheifdoms with the longest average distance. This table also displays relevent values to that calculation.
+The ensuing analysis includes calculating and plotting weighted average distances to the nearest health center per chiefdom. A heat map was generated showing this average distance. A table was also generated displaying the five cheifdoms with the longest average distance. This table also displays relevent values for these calculations.
 
-polygons are identified through spatial joins, enabling the calculation of weighted average distances at the chiefdom level.
-
-Spatial analysis and visualization further enhance the insights derived from the data. Points within the chiefdom of Neya were visualized. Customized maps illustrating the spatial distribution of populatons and health centers.
+Spatial analysis and visualization further enhance the insights derived from the data. Population within the chiefdom of Neya wass visualized. Customized maps illustrating the spatial distribution of populatons and health centers within the chiefdom.
 
 ## Results
 
