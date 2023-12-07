@@ -5,6 +5,8 @@ output: pdf_document
 bibliography: bibliography.bib
 csl: american-chemical-society.csl
 documentclass: report
+header-includes:
+    - \usepackage{graphicx}
 ---
 
 <!--
@@ -13,10 +15,10 @@ pandoc --citeproc -o paper.pdf paper.md
 
 <!--
 TODO
-- make figure labels 
-- edit results
+- convert table to latex table
+- edit figure labels
+- write results
 - edit conculsion
-- fix pop distribution to show points by size
 - Read article
 
 DONE
@@ -25,6 +27,9 @@ DONE
 - cited article
 - grammarly intro
 - edit/grammarly methods
+7/12
+- fix pop distribution to show points by size
+- make figure labels in latex
 -->
 
 ## Introduction:
@@ -62,27 +67,43 @@ Spatial analysis and visualization further enhance the insights derived from the
 | Banta Mokele    |                     3 |         1295.51 |                  2.31568  |                        0.0168067 |        4.17774 |
 | Mongo           |                    11 |         5021.18 |                  2.19072  |                        0.0840336 |        3.70462 |
 
-![Figure Label](Avg_Distance.jpg){#fig:1}
-![Figure Label](pop.jpg)
-![Figure Label](Healthcenter.jpg)
+\begin{figure}
+    \centering
+    \textbf{Average Distance Heat Map}\par\medskip
+    \includegraphics[width=\linewidth]{Avg_Distance.jpg}
+    \caption{
+        Illustrates a heat map showcasing the average distances, measured in kilometers, from various locations to the nearest health center. The visualization reveals a spatial pattern, with a higher density of chiefdoms experiencing longer distances situated in the northern region. This geographical insight offers a visual representation of disparities in healthcare accessibility, guiding further exploration and intervention strategies in regions with pronounced challenges.
+        }
+    \label{fig:Avg_Distance}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \textbf{Health Center and Under 5 Population Distribution in Neya District}\par\medskip
+    \includegraphics[width=\linewidth]{High_resoltion.png}
+    \caption{
+        Provides a geospatial representation of population distribution within the Neya district. And the distribution of health centers within the Neya district.
+        }
+    \label{fig:High_resoltion}
+\end{figure}
+
 
 **Table 1: Insights on Chiefdoms and Health Center Distances**
 
-Table 1 presents valuable insights into the average distances from different chiefdoms to health centers. Notably, Neya emerges with the longest average distance, spanning approximately 4.96 kilometers. The order of the top 5 chiefdoms with the longest average distances to health centers is as follows: Neya, Tambakha, Dodo, Banta Mokele, and Mongo. This ranking provides a clear understanding of the geographic distribution of healthcare accessibility, highlighting areas where populations face greater challenges in reaching health facilities.
+In Fig.\ref{avg-dist} Table 1 presents valuable insights into the average distances from different chiefdoms to health centers. Notably, Neya emerges with the longest average distance, spanning approximately 4.96 kilometers. The order of the top 5 chiefdoms with the longest average distances to health centers is as follows: Neya, Tambakha, Dodo, Banta Mokele, and Mongo. This ranking provides a clear understanding of the geographic distribution of healthcare accessibility, highlighting areas where populations face greater challenges in reaching health facilities.
 
-**Figure 1: Average Distance Heat Map**
-
-Figure 1 illustrates a heat map showcasing the average distances, measured in kilometers, from various locations to the nearest health center. The visualization reveals a spatial pattern, with a higher density of chiefdoms experiencing longer distances situated in the northern region. This geographical insight offers a visual representation of disparities in healthcare accessibility, guiding further exploration and intervention strategies in regions with pronounced challenges.
-
+<!--
 **Figure 2: Population Geolocation in Neya District**
 
-Figure 2 provides a geospatial representation of population distribution within the Neya district. The visualization indicates that the population is more concentrated in the southern part of the district. This insight is crucial for understanding population density patterns, enabling targeted efforts in healthcare resource allocation and service delivery where the population is most dense.
+Figure 2  The visualization indicates that the population is more concentrated in the southern part of the district. This insight is crucial for understanding population density patterns, enabling targeted efforts in healthcare resource allocation and service delivery where the population is most dense.
 
-**Figure 3: Health Centers in Neya District**
+**Figure 3: **
 
-Figure 3 focuses on the distribution of health centers within the Neya district. The visualization clearly depicts the concentration of health centers in two distinct areas: the northwest and southeast of the district. This spatial arrangement provides insights into the accessibility of health services, suggesting that residents in these regions have relatively easier access to healthcare facilities. The visualization aids in identifying areas with potential gaps in healthcare infrastructure, informing strategic planning for additional health center placements.
+Figure 3 focuses  The visualization clearly depicts the concentration of health centers in two distinct areas: the northwest and southeast of the district. This spatial arrangement provides insights into the accessibility of health services, suggesting that residents in these regions have relatively easier access to healthcare facilities. The visualization aids in identifying areas with potential gaps in healthcare infrastructure, informing strategic planning for additional health center placements.
 
 These visual and tabular representations collectively contribute to a comprehensive understanding of the geographic dynamics related to healthcare accessibility, population distribution, and health center placement within the Neya district. The integration of such insights is crucial for informed decision-making in public health planning and resource allocation.
+
+-->
 
 ## Conclusion
 
