@@ -7,6 +7,8 @@ csl: american-chemical-society.csl
 documentclass: report
 header-includes:
     - \usepackage{graphicx}
+    - \usepackage{tabularx}
+    - \usepackage{tabulary}
 ---
 
 <!--
@@ -15,11 +17,11 @@ pandoc --citeproc -o paper.pdf paper.md
 
 <!--
 TODO
-- convert table to latex table
 - edit figure labels
 - write results
 - edit conculsion
 - Read article
+- cross check table values
 
 DONE
 - Find source intro
@@ -30,6 +32,9 @@ DONE
 7/12
 - fix pop distribution to show points by size
 - make figure labels in latex
+8/12
+- convert table to latex table
+- remove title from heat map
 -->
 
 ## Introduction:
@@ -58,21 +63,29 @@ Spatial analysis and visualization further enhance the insights derived from the
 
 ## Results
 
-
-| Cheifdom Name   |   Health Center Count |   u5 population |   Health Centers per 1000 |   Health Center Count Normalized |   Avg Distance |
-|:----------------|----------------------:|----------------:|--------------------------:|---------------------------------:|---------------:|
-| Neya            |                     7 |         4347.58 |                  1.61009  |                        0.0504202 |        4.96328 |
-| Tambakha        |                     5 |         5885.6  |                  0.849532 |                        0.0336134 |        4.74312 |
-| Dodo            |                     3 |         3073.32 |                  0.976144 |                        0.0168067 |        4.40525 |
-| Banta Mokele    |                     3 |         1295.51 |                  2.31568  |                        0.0168067 |        4.17774 |
-| Mongo           |                    11 |         5021.18 |                  2.19072  |                        0.0840336 |        3.70462 |
+\begin{table}[h]
+    \centering
+    \begin{tabulary}{\textwidth}{LCCCCC}
+        \hline
+        Cheifdom Name & Health Center Count & Health Centers per 1000 U5 & Avg Distance \\
+        \hline
+        Neya & 7 & 1.61009 & 4.96328 \\
+        Tambakha & 5 & 0.849532 & 4.74312 \\
+        Dodo & 3 & 0.976144 & 4.40525 \\
+        Banta Mokele & 3 & 2.31568 & 4.17774 \\
+        Mongo & 11 & 2.19072 & 3.70462 \\
+        \hline
+    \end{tabulary}
+    \caption{presents valuable insights into the average distances from different chiefdoms to health centers.}
+    \label{tab:results_table}
+\end{table}
 
 \begin{figure}
     \centering
     \textbf{Average Distance Heat Map}\par\medskip
-    \includegraphics[width=\linewidth]{Avg_Distance.jpg}
+    \includegraphics[width=\linewidth]{Avg_Distance.png}
     \caption{
-        Illustrates a heat map showcasing the average distances, measured in kilometers, from various locations to the nearest health center. The visualization reveals a spatial pattern, with a higher density of chiefdoms experiencing longer distances situated in the northern region. This geographical insight offers a visual representation of disparities in healthcare accessibility, guiding further exploration and intervention strategies in regions with pronounced challenges.
+        Illustrates a heat map showcasing the weighted average straight line distances, measured in kilometers, from various under 5 population centers to the nearest health center.
         }
     \label{fig:Avg_Distance}
 \end{figure}
@@ -87,10 +100,9 @@ Spatial analysis and visualization further enhance the insights derived from the
     \label{fig:High_resoltion}
 \end{figure}
 
+In \ref{tab:results_table} Notably, Neya emerges with the longest average distance, spanning approximately 4.96 kilometers. The order of the top 5 chiefdoms with the longest average distances to health centers is as follows: Neya, Tambakha, Dodo, Banta Mokele, and Mongo. This ranking provides a clear understanding of the geographic distribution of healthcare accessibility, highlighting areas where populations face greater challenges in reaching health facilities.
 
-**Table 1: Insights on Chiefdoms and Health Center Distances**
-
-In Fig.\ref{avg-dist} Table 1 presents valuable insights into the average distances from different chiefdoms to health centers. Notably, Neya emerges with the longest average distance, spanning approximately 4.96 kilometers. The order of the top 5 chiefdoms with the longest average distances to health centers is as follows: Neya, Tambakha, Dodo, Banta Mokele, and Mongo. This ranking provides a clear understanding of the geographic distribution of healthcare accessibility, highlighting areas where populations face greater challenges in reaching health facilities.
+The visualization reveals a spatial pattern, with a higher density of chiefdoms experiencing longer distances situated in the northern region. This geographical insight offers a visual representation of disparities in healthcare accessibility, guiding further exploration and intervention strategies in regions with pronounced challenges.
 
 <!--
 **Figure 2: Population Geolocation in Neya District**
