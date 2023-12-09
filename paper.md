@@ -17,11 +17,8 @@ pandoc --citeproc -o paper.pdf paper.md
 
 <!--
 TODO
-- edit figure labels
-- write results
 - edit conculsion
 - Read article
-- cross check table values
 
 DONE
 - Find source intro
@@ -35,6 +32,10 @@ DONE
 8/12
 - convert table to latex table
 - remove title from heat map
+9/12
+- edit figure labels
+- write results
+- cross check table values
 -->
 
 ## Introduction:
@@ -76,7 +77,9 @@ Spatial analysis and visualization further enhance the insights derived from the
         Mongo & 11 & 2.19072 & 3.70462 \\
         \hline
     \end{tabulary}
-    \caption{presents valuable insights into the average distances from different chiefdoms to health centers.}
+    \caption{
+        This showcases the five districts with the lengthiest average straight-line distance, measured in kilometers. Additionally, it provides relevant data points for calculating this distance, including the number of health centers and their respective counts per 1000 individuals under the age of 5.
+        }
     \label{tab:results_table}
 \end{table}
 
@@ -85,7 +88,7 @@ Spatial analysis and visualization further enhance the insights derived from the
     \textbf{Average Distance Heat Map}\par\medskip
     \includegraphics[width=\linewidth]{Avg_Distance.png}
     \caption{
-        Illustrates a heat map showcasing the weighted average straight line distances, measured in kilometers, from various under 5 population centers to the nearest health center.
+        This figure illustrates a heat map displaying the weighted average straight-line distances, measured in kilometers, from various under-5 population centers to the nearest health center in each chiefdom in Sierra Leone.
         }
     \label{fig:Avg_Distance}
 \end{figure}
@@ -95,33 +98,25 @@ Spatial analysis and visualization further enhance the insights derived from the
     \textbf{Health Center and Under 5 Population Distribution in Neya District}\par\medskip
     \includegraphics[width=\linewidth]{High_resoltion.png}
     \caption{
-        Provides a geospatial representation of population distribution within the Neya district. And the distribution of health centers within the Neya district.
+        This figure provides a geospatial representation of the distribution of the under-5 population within the Neya district, which has the longest average distance among the districts. It also depicts the distribution of health centers serving the under-5 population within the Neya district.
         }
     \label{fig:High_resoltion}
 \end{figure}
 
-In \ref{tab:results_table} Notably, Neya emerges with the longest average distance, spanning approximately 4.96 kilometers. The order of the top 5 chiefdoms with the longest average distances to health centers is as follows: Neya, Tambakha, Dodo, Banta Mokele, and Mongo. This ranking provides a clear understanding of the geographic distribution of healthcare accessibility, highlighting areas where populations face greater challenges in reaching health facilities.
+The results of our study, as presented in Table \ref{tab:results_table}, highlight the five chiefdoms in Sierra Leone with the most extensive average straight-line distances, measured in kilometers. Notably, Tambakha and Dodo chiefdoms emerge with fewer health centers per 1000 individuals under the age of 5 compared to other districts on the list. Despite Neya chiefdom having a relatively higher count of health centers per 1000 under-fives, it still manages to have the longest average distance among the districts, indicating a interplay between healthcare accessibility and geographical factors.
 
-The visualization reveals a spatial pattern, with a higher density of chiefdoms experiencing longer distances situated in the northern region. This geographical insight offers a visual representation of disparities in healthcare accessibility, guiding further exploration and intervention strategies in regions with pronounced challenges.
+Figure \ref{fig:Avg_Distance} provides a comprehensive visualization of the weighted average straight-line distances from various under-5 population centers to the nearest health center in each chiefdom across Sierra Leone. The northern regions, particularly Neya chiefdom in the northeast, exhibit a concentration of longer distances, underscoring the geographical disparities in healthcare accessibility.
 
-<!--
-**Figure 2: Population Geolocation in Neya District**
-
-Figure 2  The visualization indicates that the population is more concentrated in the southern part of the district. This insight is crucial for understanding population density patterns, enabling targeted efforts in healthcare resource allocation and service delivery where the population is most dense.
-
-**Figure 3: **
-
-Figure 3 focuses  The visualization clearly depicts the concentration of health centers in two distinct areas: the northwest and southeast of the district. This spatial arrangement provides insights into the accessibility of health services, suggesting that residents in these regions have relatively easier access to healthcare facilities. The visualization aids in identifying areas with potential gaps in healthcare infrastructure, informing strategic planning for additional health center placements.
-
-These visual and tabular representations collectively contribute to a comprehensive understanding of the geographic dynamics related to healthcare accessibility, population distribution, and health center placement within the Neya district. The integration of such insights is crucial for informed decision-making in public health planning and resource allocation.
-
--->
+Zooming in on Neya chiefdom in Figure \ref{fig:High_resoltion}, our geospatial representation reveals a qualitative distribution of the under-5 population, emphasizing the east-central region as having the longest average distances. Additionally, the presence of a main road in the west portion of the chiefdom is notable. While not directly addressed in the quantitative data, this road likely plays a significant role in reducing the actual distances traveled, suggesting that the straight-line distances presented may underestimate the true challenges faced by the population in accessing healthcare.
 
 ## Conclusion
 
 <!--
 Limitations
 - straightline distance
+Future Directions
+- Which health centers are driving longest distance
+- statistical comparisons for avg distances
 -->
 
 The amalgamation of table insights and geospatial visualizations provides a nuanced understanding of healthcare accessibility, population distribution, and health center placement within the Neya district. These findings carry implications for strategic public health planning and resource allocation. The key takeaways from the analysis are summarized below.
