@@ -17,8 +17,9 @@ pandoc --citeproc -o paper.pdf paper.md
 
 <!--
 TODO
-- edit conculsion
-- Read article
+- Read articles
+- Ensure accuracy of all citations 
+- grammarly everything
 
 DONE
 - Find source intro
@@ -36,6 +37,9 @@ DONE
 - edit figure labels
 - write results
 - cross check table values
+10/12
+- edit conculsion
+
 -->
 
 ## Introduction:
@@ -111,29 +115,13 @@ Zooming in on Neya chiefdom in Figure \ref{fig:High_resoltion}, our geospatial r
 
 ## Conclusion
 
-<!--
-Limitations
-- straightline distance
-Future Directions
-- Which health centers are driving longest distance
-- statistical comparisons for avg distances
--->
+The identification of Neya chiefdom as having the longest average distance to health centers, reaching approximately 4.96 kilometers, underscores challenges in healthcare accessibility for residents in this particular region. This finding highlights the need for targeted interventions to address geographical disparities in healthcare access, especially in areas where the population faces substantial obstacles in reaching essential health services. The ranking of chiefdoms with longer average distances, including Tambakha, Dodo, Banta Mokele, and Mongo, further expands on the situation, emphasizing the importance of devising strategies to improve healthcare infrastructure and reduce the burden on communities with limited access.
 
-The amalgamation of table insights and geospatial visualizations provides a nuanced understanding of healthcare accessibility, population distribution, and health center placement within the Neya district. These findings carry implications for strategic public health planning and resource allocation. The key takeaways from the analysis are summarized below.
+The heat map presented in Figure \ref{fig:Avg_Distance} illustrates the spatial distribution of average distances to health centers across chiefdoms in Sierra Leone. The higher density of chiefdoms experiencing longer distances in the north eastern region signifies a geographical pattern of healthcare disparities. This insight aligns with existing research [@absRemotenessAreas], emphasizing the crucial role of geospatial analysis in identifying areas with reduced healthcare accessibility. The ability to pinpoint specific regions facing greater challenges facilitates the formulation of targeted policies and interventions to mitigate these disparities effectively.
 
-**Healthcare Accessibility:**
-The identification of Neya as having the longest average distance to health centers, reaching approximately 4.96 kilometers, underscores significant challenges in healthcare accessibility for residents in this chiefdom. The subsequent ranking of chiefdoms with longer average distances, including Tambakha, Dodo, Banta Mokele, and Mongo, emphasizes the need for targeted interventions to address geographical disparities in healthcare access [@doi:10.1080/00045608.2012.687349].
+Zooming in on Neya chiefdom in Figure \ref{fig:High_resoltion}, our geospatial representation offers a qualitative distribution of the under-5 population, emphasizing the east-central region as having the longest average distances. Notably, the presence of a main road in the west portion of the chiefdom, although not explicitly addressed in the quantitative data, likely plays a significant role in reducing the actual distances traveled by residents seeking healthcare. This suggests that the straight-line distances presented may not acurately reflect the true challenges faced by the population in accessing healthcare, emphasizing the need for a more nuanced understanding of the interaction between geographical factors and healthcare accessibility. Recognizing such patterns is essential for identifying areas where healthcare infrastructure may require reinforcement to bridge potential gaps [@nihDevelopmentManagement].
 
-**Geospatial Disparities:**
-The heat map in Figure 1 vividly illustrates the spatial distribution of average distances to health centers. The higher density of chiefdoms experiencing longer distances in the northern region signifies a geographical pattern of healthcare disparities. This insight aligns with existing research highlighting the role of geospatial analysis in identifying areas with reduced healthcare accessibility [@absRemotenessAreas]
-
-**Population Distribution:**
-Figure 2 provides a geospatial representation of population distribution within the Neya district. The concentration of population in the southern part of the district is a crucial demographic insight. This information is valuable for tailoring healthcare services to areas of higher population density, aligning with principles of equitable resource allocation [@taylorfrancisIntroductionSpatial].
-
-**Health Center Placement:**
-The distribution of health centers, as depicted in Figure 3, showcases concentrated placements in the northwest and southeast of the Neya district. This spatial arrangement suggests relatively better access to healthcare facilities for residents in these regions. The identification of such patterns aids in recognizing areas where healthcare infrastructure may require reinforcement to bridge potential gaps [@nihDevelopmentManagement].
-
-In conclusion, the integration of table insights and geospatial visualizations provides a comprehensive view of the healthcare landscape in the Neya district. The identified disparities in healthcare accessibility and population distribution offer valuable inputs for evidence-based decision-making in public health planning. Addressing these geographic variations is essential to ensuring equitable healthcare services and improving health outcomes for all residents.
+While these findings contribute valuable insights, it is important to acknowledge certain limitations. The use of straight-line distance may oversimplify the actual travel experience; the predominantly qualitative and descriptive nature of the analysis calls for a more robust quantitative approach. Additionally, the grouping of both government and private healthcare infrastructure ignores the accessibility of private versus government health facilities based on economic considerations. Future research directions could include a frequency distribution analysis to determine which health centers are driving the longest distance in Neya Chiefdom, a disaggregation of private and government health facilities, the introduction of statistical tests for comparisons of average distance, and cluster analysis to identify optimal locations for future health centers. These enhancements would further refine our understanding of healthcare accessibility challenges and contribute to the development of more effective interventions to address them.
 
 ## Acknowledgments 
 
