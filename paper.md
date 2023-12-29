@@ -130,4 +130,7 @@ While these findings contribute valuable insights, it is important to acknowledg
 
 ChatGPT was used extensively in code creation and manuscript writing.
 
+## Code
+The source code for the implemented system can be found on GitHub at: https://github.com/Jakelamers64/Under-5-Nearest-Health-Center
+
 ## Refrences 
